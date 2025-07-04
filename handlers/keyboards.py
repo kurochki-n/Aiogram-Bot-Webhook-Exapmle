@@ -1,7 +1,4 @@
-from aiogram.types import InlineKeyboardButton, \
-    InlineKeyboardMarkup, \
-    KeyboardButton, \
-    ReplyKeyboardMarkup
+from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup, KeyboardButton, ReplyKeyboardMarkup
 from aiogram.types.web_app_info import WebAppInfo
 
 

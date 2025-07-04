@@ -1,7 +1,6 @@
 from aiogram import types, F, Router
 from aiogram.types import Message
 from aiogram.filters import Command, StateFilter
-from aiogram.types.input_file import FSInputFile
 from aiogram.fsm.context import FSMContext
 
 from . import localization as loc, keyboards as kb
