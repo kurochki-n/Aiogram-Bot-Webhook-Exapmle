@@ -6,7 +6,6 @@ class Config(BaseSettings):
     BOT_TOKEN: SecretStr
     CHANNEL_ID: SecretStr
     
-    WEBHOOK_HOST: SecretStr
     WEBHOOK_PORT: SecretStr
     WEBHOOK_URL: SecretStr
 

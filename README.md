@@ -2,7 +2,7 @@
 
 ## Описание
 
-Этот проект — пример реализации Telegram-бота на базе [aiogram 3.x](https://docs.aiogram.dev/).
+Этот проект — пример реализации Telegram-бота на базе [aiogram 3.x](https://docs.aiogram.dev/). Обработка обновлений чата происходит с помощью webhook. Такое решение необходимо для одновременного запуска Telegram-бота и FastAPI приложения (например, если вам нужен Telegram-бот с WebApp приложением). 
 
 ## Основные возможности
 - Обработка команд и сообщений пользователей
@@ -26,6 +26,8 @@
      ```env
      BOT_TOKEN=токен-вашего-бота
      CHANNEL_ID=айди-вашего-канала
+     WEBHOOK_PORT=порт-для-уведомлений
+     WEBHOOK_URL=адрес-для-уведомлений
      ```
 3. **Установите зависимости с помощью пакетного менеджера [uv](https://github.com/astral-sh/uv):**
    ```bash
@@ -39,6 +41,8 @@
 ## Переменные окружения
 - `BOT_TOKEN` — токен вашего Telegram-бота
 - `CHANNEL_ID` — ID канала для проверки подписки
+- `WEBHOOK_PORT` — порт, на котором будет запущено FastAPI приложение
+- `WEBHOOK_URL` — туннель к локально запущенному FastAPI приложению (только https)
 
 ## Основная структура проекта
 ```
@@ -64,6 +68,8 @@ Aiogram-Bot-Example/
 - [aiogram 3.x](https://github.com/aiogram/aiogram)
 - [python-dotenv](https://github.com/theskumar/python-dotenv)
 - [pydantic](https://github.com/pydantic/pydantic)
+- [uvicorn](https://github.com/encode/uvicorn)
+- [fastapi](https://github.com/fastapi/fastapi)
 
 ## Расширение и кастомизация
 Вы можете легко добавить новые команды, состояния, клавиатуры и middleware, а также адаптировать логику под свои задачи.
