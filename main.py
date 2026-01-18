@@ -1,5 +1,4 @@
 import logging
-import os
 from typing import AsyncGenerator
 from contextlib import asynccontextmanager
 
@@ -15,17 +14,11 @@ from fastapi.middleware.cors import CORSMiddleware
 from handlers import setup_routers
 from config_reader import config
 
-
-os.makedirs('logs', exist_ok=True)
-
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] (%(funcName)s) %(message)s",
-    handlers=[
-        logging.FileHandler("logs/logs.log", encoding="utf-8"),
-        logging.StreamHandler()
-    ]
-    )
+    handlers=[logging.StreamHandler()]
+)
 
 
 @asynccontextmanager
