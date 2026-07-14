@@ -7,15 +7,14 @@ from utils import tools
 
 
 class CheckIsAdminMiddleware(BaseMiddleware):
-    
     async def __call__(
         self,
         handler: Callable[[Message | CallbackQuery, Dict[str, Any]], Awaitable[Any]],
         event: Message | CallbackQuery,
-        data: Dict[str, Any]
+        data: Dict[str, Any],
     ) -> Any:
         admins = await tools.get_admins()
-        
+
         if event.from_user.id not in admins:
             # executed if the user is not an admin
             ...

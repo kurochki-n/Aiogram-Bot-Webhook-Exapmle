@@ -1,3 +1,9 @@
 from .callback_answer import CallbackAnswerMiddleware
 from .check_is_admin import CheckIsAdminMiddleware
 from .check_sub import CheckSubscriptionMiddleware
+
+__all__ = [
+    "CallbackAnswerMiddleware",
+    "CheckIsAdminMiddleware",
+    "CheckSubscriptionMiddleware",
+]
